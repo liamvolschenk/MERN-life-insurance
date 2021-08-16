@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "data:import": "node seeder",
     "data:destroy": "node seeder -d",
-    "build": "cd client && npm run build",
+    "build": "cd frontend && npm run build",
     "install-client": "cd frontend && npm install",
     "heroku-postbuild": "npm run install-frontend && npm run build",
     "server": "nodemon server.js",
