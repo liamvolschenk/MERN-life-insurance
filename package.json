@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "data:import": "node seeder",
     "data:destroy": "node seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "author": "Liam Volschenk",
   "license": "MIT",
