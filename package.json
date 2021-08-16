@@ -5,14 +5,17 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server",
     "test": "mocha",
-    "server": "nodemon server",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "data:import": "node seeder",
     "data:destroy": "node seeder -d",
-    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
+    "build": "cd client && npm run build",
+    "install-client": "cd frontend && npm install",
+    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "server": "nodemon server.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
   },
   "author": "Liam Volschenk",
   "license": "MIT",

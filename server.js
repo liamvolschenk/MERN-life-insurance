@@ -45,10 +45,13 @@ if (process.env.NODE_ENV === 'production') {
   })
 }*/
 
-app.use(express.static(path.join(__dirname, "frontend", "build")))
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+// Step 1:
+const __dirname = path.resolve()
+app.use(express.static(path.resolve(__dirname, "./frontend/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
 });
 
 //setting the port
