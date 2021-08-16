@@ -11,10 +11,10 @@
     "data:import": "node seeder",
     "data:destroy": "node seeder -d",
     "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "server": "nodemon server.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
+    "start": "node server.js"
   },
   "author": "Liam Volschenk",
   "license": "MIT",
