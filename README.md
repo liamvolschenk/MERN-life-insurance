@@ -1,5 +1,7 @@
 # Life-insurance MERN fullstack application
 
+https://user-images.githubusercontent.com/83077923/129619584-bcb42cdc-0445-4d56-ba90-c5dd2c9f1ee9.mov
+
  ## Table of Contents
   <ul>
     <li><a href="#about">About</a></li>
